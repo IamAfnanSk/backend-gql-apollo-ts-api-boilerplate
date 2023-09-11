@@ -9,14 +9,13 @@ import { PrismaClient } from '@prisma/client';
 import { config as dotenvConfig } from 'dotenv';
 
 import { schema } from './handlers/index.js';
+import { PORT } from './constants/global.js';
 
 dotenvConfig();
 
 export interface CustomApolloContext {
   prisma: PrismaClient;
 }
-
-const PORT = process.env.PORT || 1337;
 
 const prisma = new PrismaClient();
 
